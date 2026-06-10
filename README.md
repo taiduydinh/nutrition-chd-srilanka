@@ -181,7 +181,7 @@ Perera, D. S., Dinh, T., Chandrasekara, A., Lisik, D., Zou, D., & Rathnayake, K.
 Submitted manuscript.
 
 ```bibtex
-@misc{dinh2026nutritionchdsrilanka,
+@misc{perera2026nutritionchdsrilanka,
   author    = {Perera, D. S., Dinh, T., Chandrasekara, A., Lisik, D., Zou, D., Rathnayake, K. M.},
   title     = {On the Impact of Fruit and Vegetable Consumption on Coronary Heart Disease Risk Factors: A Case Study from Sri Lanka},
   year      = {2026},
