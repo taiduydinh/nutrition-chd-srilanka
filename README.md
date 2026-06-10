@@ -183,7 +183,7 @@ Submitted manuscript.
 ```bibtex
 @misc{dinh2026nutritionchdsrilanka,
   author    = {Perera, D. S., Dinh, T., Chandrasekara, A., Lisik, D., Zou, D., Rathnayake, K. M.},
-  title     = {nutrition-chd-srilanka: Analysis files, result tables, and figures for a study of fruit and vegetable intake and cardiometabolic risk markers in Sri Lankan adults},
+  title     = {On the Impact of Fruit and Vegetable Consumption on Coronary Heart Disease Risk Factors: A Case Study from Sri Lanka},
   year      = {2026},
   publisher = {GitHub},
   url       = {https://github.com/taiduydinh/nutrition-chd-srilanka}
