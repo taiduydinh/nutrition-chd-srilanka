@@ -168,23 +168,4 @@ If you use this repository, please cite the associated manuscript:
 Perera DS, Dinh T, Chandrasekara A, Lisik D, Zou D, Rathnayake KM.
 On the Impact of Fruit and Vegetable Consumption on Coronary Heart Disease Risk Factors:
 A Case Study from Sri Lanka.
-Submitted manuscript.
 ```
-
-This citation should be updated after publication.
-
-## Contact
-
-For questions about the study or repository, please contact the corresponding author:
-
-**Kumari Malkanthi Rathnayake, PhD (UK)**
-Department of Nutrition and Dietetics
-Faculty of Livestock, Fisheries and Nutrition
-Wayamba University of Sri Lanka
-Makandura (NWP), 60170, Sri Lanka
-
-Email: `kumarimr@wyb.ac.lk`
-
-## Repository description
-
-This repository provides the analysis files, result tables, and figures for a study of fruit and vegetable intake and cardiometabolic risk markers in Sri Lankan adults.
