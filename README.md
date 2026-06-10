@@ -164,8 +164,4 @@ Then run the notebook cells sequentially.
 
 If you use this repository, please cite the associated manuscript:
 
-```text
-Perera DS, Dinh T, Chandrasekara A, Lisik D, Zou D, Rathnayake KM.
-On the Impact of Fruit and Vegetable Consumption on Coronary Heart Disease Risk Factors:
-A Case Study from Sri Lanka.
-```
+@misc{dinh2026nutritionchdsrilanka, author = {Dinh, Tai and Perera, Dilki S. and Chandrasekara, Ananda and Lisik, Daniil and Zou, Ding and Rathnayake, Kumari M.}, title = {nutrition-chd-srilanka: Analysis files, result tables, and figures for a study of fruit and vegetable intake and cardiometabolic risk markers in Sri Lankan adults}, year = {2026}, publisher = {GitHub}, url = {https://github.com/taiduydinh/nutrition-chd-srilanka} }
