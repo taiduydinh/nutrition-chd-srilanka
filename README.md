@@ -1,27 +1,25 @@
 # nutrition-chd-srilanka
 
-This repository contains the analysis code, de-identified analytic data files, result tables, and figures for the manuscript:
+This repository contains the data files, analysis notebook, result tables, and figures associated with the manuscript:
 
 **On the Impact of Fruit and Vegetable Consumption on Coronary Heart Disease Risk Factors: A Case Study from Sri Lanka**
 
-The study examines how total fruit and vegetable intake relates to dietary nutrient profiles and cardiometabolic risk markers in a cross-sectional sample of Sri Lankan adults. The analysis combines exploratory data analysis, Spearman correlation analysis, energy-adjusted nutrient analyses, between-strata heterogeneity testing, regression-based sensitivity checks, female-only sensitivity analysis, and supervised regression modelling.
+The study examines how total fruit and vegetable intake relates to dietary nutrient profiles and cardiometabolic risk markers in a cross-sectional sample of Sri Lankan adults. The analysis includes exploratory data analysis, Spearman correlation analysis, energy-adjusted nutrient analyses, between-strata heterogeneity testing, regression-based sensitivity checks, female-only sensitivity analysis, and supervised regression modelling.
 
 ## Repository contents
-
-The repository currently contains the following main files.
 
 ### Analysis notebook
 
 * `chd-srilanka_analysis.ipynb`
-  Main Jupyter notebook used for data preprocessing, exploratory analysis, correlation analysis, energy-adjusted nutrient analysis, regression-based sensitivity checks, and machine-learning model benchmarking.
+  Main Jupyter notebook used to generate the analyses, tables, and figures reported in the manuscript.
 
 ### Data files
 
 * `heart_new.xlsx`
-  Main de-identified dataset used for the updated analysis.
+  Main data file used for the analyses.
 
 * `heart_filtered.csv`
-  Filtered analytic dataset after applying the main inclusion criterion for observed fasting insulin values.
+  Main analytic dataset used after applying the inclusion criteria for the primary analyses.
 
 * `heart_leq200.csv`
   Analytic subset with total fruit and vegetable intake `<= 200 g/day`.
@@ -44,16 +42,16 @@ The repository currently contains the following main files.
   Energy-adjusted residual-method correlations in the `> 200 g/day` stratum.
 
 * `heterogeneity_le200_vs_gt200.csv`
-  Between-strata heterogeneity tests comparing Spearman correlations in the `<= 200 g/day` and `> 200 g/day` strata.
+  Between-strata heterogeneity tests comparing correlations in the `<= 200 g/day` and `> 200 g/day` groups.
 
 * `linear_reg_total_quantity_confounding_checks.csv`
-  Regression-based sensitivity analyses assessing whether associations between total fruit and vegetable intake and selected cardiometabolic endpoints are attenuated after adjustment for age, sex, and total energy intake.
+  Regression-based sensitivity analyses assessing associations between total fruit and vegetable intake and selected cardiometabolic endpoints before and after covariate adjustment.
 
 * `model_evaluation_results_fullsample.csv`
-  Machine-learning model evaluation results in the full insulin-observed analytic sample.
+  Supervised regression model evaluation results for the full analytic sample.
 
 * `model_evaluation_results.csv`
-  Machine-learning model evaluation results for subgroup or sensitivity analyses.
+  Supervised regression model evaluation results for additional subgroup or sensitivity analyses.
 
 ### Figure files
 
@@ -61,10 +59,10 @@ The repository currently contains the following main files.
   Distribution of fruit, vegetable, and total fruit and vegetable intake by intake stratum.
 
 * `raincloud_leq200.pdf`
-  Raincloud plots for variables in the `<= 200 g/day` stratum.
+  Raincloud plots for study variables in the `<= 200 g/day` stratum.
 
 * `raincloud_g200.pdf`
-  Raincloud plots for variables in the `> 200 g/day` stratum.
+  Raincloud plots for study variables in the `> 200 g/day` stratum.
 
 * `scatter_total_quantity_vs_targets_leq200.pdf`
   Scatterplots of total fruit and vegetable intake against selected cardiometabolic endpoints in the `<= 200 g/day` stratum.
@@ -95,26 +93,26 @@ The repository currently contains the following main files.
 
 ## Analysis overview
 
-The main analysis follows these steps:
+The analysis workflow includes the following steps:
 
-1. Load the updated de-identified dataset.
-2. Apply preprocessing, type conversion, range checks, and derived-variable verification.
-3. Restrict the main analytic sample to participants with observed fasting insulin values.
-4. Define total fruit and vegetable intake in grams per day as the primary dietary exposure.
-5. Stratify the sample into:
+1. Load the main study data file.
+2. Prepare the analytic dataset for the main statistical analyses.
+3. Define total fruit and vegetable intake in grams per day as the primary dietary exposure.
+4. Stratify participants into:
 
    * `<= 200 g/day`
    * `> 200 g/day`
-6. Summarize participant characteristics and intake distributions.
-7. Estimate Spearman correlations between total fruit and vegetable intake and study variables.
-8. Perform energy-adjusted nutrient analyses using:
+5. Summarize fruit, vegetable, and total fruit and vegetable intake distributions.
+6. Estimate Spearman correlations between total fruit and vegetable intake and study variables.
+7. Perform energy-adjusted nutrient analyses using:
 
    * nutrient-density method
    * residual method
-9. Test between-strata heterogeneity in correlations.
-10. Perform regression-based sensitivity analyses adjusted for age, sex, and total energy intake.
-11. Conduct a female-only sensitivity analysis.
-12. Benchmark supervised regression models for selected cardiometabolic and dietary endpoints.
+8. Compare correlation patterns between intake strata using heterogeneity tests.
+9. Perform regression-based sensitivity analyses adjusted for age, sex, and total energy intake.
+10. Conduct a female-only sensitivity analysis.
+11. Benchmark supervised regression models for selected cardiometabolic and dietary endpoints.
+12. Generate the result tables and figures reported in the manuscript.
 
 ## Machine-learning models
 
@@ -127,7 +125,7 @@ The supervised regression benchmark includes:
 * Support Vector Regression with a linear kernel
 * XGBoost
 
-Model performance is evaluated using held-out test `R^2` and RMSE. RMSE should be interpreted within each endpoint because outcomes are measured on different scales.
+Model performance is evaluated using held-out test `R^2` and root mean squared error (RMSE). Because the outcomes are measured on different scales, RMSE should be interpreted within each endpoint rather than compared directly across endpoints.
 
 ## Software requirements
 
@@ -148,23 +146,19 @@ openpyxl
 jupyter
 ```
 
-To install the required packages, create a virtual environment and run:
+To install the required packages, run:
 
 ```bash
 pip install pandas numpy scipy statsmodels scikit-learn xgboost matplotlib seaborn ptitprince openpyxl jupyter
 ```
 
-Then open the notebook:
+To reproduce the analysis, open the notebook:
 
 ```bash
 jupyter notebook chd-srilanka_analysis.ipynb
 ```
 
-Run the notebook cells sequentially to reproduce the result tables and figures.
-
-## Data statement
-
-The dataset included in this repository is intended to be de-identified. It should not contain participant names, phone numbers, addresses, exact dates of birth, national identity numbers, or other direct identifiers. Users should treat the data as health-related research data and use it only for academic, reproducibility, and non-commercial research purposes.
+Then run the notebook cells sequentially.
 
 ## Citation
 
@@ -181,7 +175,7 @@ This citation should be updated after publication.
 
 ## Contact
 
-For questions about the study or dataset, please contact the corresponding author:
+For questions about the study or repository, please contact the corresponding author:
 
 **Kumari Malkanthi Rathnayake, PhD (UK)**
 Department of Nutrition and Dietetics
@@ -191,6 +185,6 @@ Makandura (NWP), 60170, Sri Lanka
 
 Email: `kumarimr@wyb.ac.lk`
 
-## License
+## Repository description
 
-Please add a license file before final public release. If the repository is intended for open academic reuse, consider adding an MIT License for code and a separate data-use note for the dataset. If reuse of the dataset should be restricted, specify this clearly in a `LICENSE` or `DATA_USE.md` file.
+This repository provides the analysis files, result tables, and figures for a study of fruit and vegetable intake and cardiometabolic risk markers in Sri Lankan adults.
